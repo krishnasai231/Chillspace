@@ -1,0 +1,53 @@
+<%-include ("../partials/header"); -%>
+
+
+<nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top" id="main-nav">
+  <div class="container">
+    <a href="/" class="navbar-brand">ꉔꁝ꒐꒒꒒ ꃳꋪꄲ</a>
+    <ul class="navbar-nav">
+      <% if(!currentUser){ %>
+      <li class="nav-item">
+        <a href="/login" class="nav-link">Login</a>
+      </li>
+      <li class="nav-item">
+        <a href="/register" class="nav-link">Signup</a>
+      </li>
+      <% } else { %>
+      <li><a href="#">Signed In As <%=currentUser.username%></a></li>
+      <li class="nav-item">
+        <a href="/logout" class="nav-link">Logout</a>
+      </li>
+      <%}%>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="jumbotron">
+    <h1>Welcome to Chill Space 🕶️😎🥶/<h1>
+        <p>Experience our hand-picked chills all over the world</p>
+        <p>
+          <a href="/chillspace/new" class="btn btn-primary btn-lg active">Add New chillspaces</a>
+        </p>
+</div>
+</header>
+<div class="row text-centre" style="display:flex; flex-wrap: wrap">
+  <% chillspace.forEach(function(chillspace){ %>
+      <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+          <img src="<%=chillspace.image%>">
+          <div class="caption">
+            <h4><%=chillspace.name%></h4>
+          </div>
+          <p>
+            <a href="/chillspace/<%=chillspace._id%> " class="btn btn-outline-dark">More info</a>
+          </p>
+        </div>
+      </div>
+      <%});%>
+  </div>
+  </div>
+
+
+  <%- include ("../partials/footer"); -%>
