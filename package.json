@@ -4,7 +4,7 @@
   "description": "Chill Bro ",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "Krishna sai reddy",
   "license": "ISC",

@@ -15,8 +15,7 @@ var express = require("express"),
 
 const { Agent } = require('http');
 const user = require("./models/user");
-mongoose.connect("mongodb+srv://krishnasaireddy:iZl3QSOoJKvH3dzs@cluster0.6ckbn.mongodb.net/krishnasaireddy?retryWrites=true&w=majority", {
-
+mongoose.connect("mongodb://localhost:27017/krishnasaireddy", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
